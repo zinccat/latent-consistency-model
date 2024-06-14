@@ -116,7 +116,7 @@ import torch
 pipe = DiffusionPipeline.from_pretrained("SimianLuo/LCM_Dreamshaper_v7")
 
 # To save GPU memory, torch.float16 can be used, but it may compromise image quality.
-pipe.to(torch_device="cuda", torch_dtype=torch.float32)
+pipe = pipe.to(torch_device="cuda", torch_dtype=torch.float32)
 
 prompt = "Self-portrait oil painting, a beautiful cyborg with golden hair, 8k"
 
@@ -148,7 +148,7 @@ import torch
 pipe = DiffusionPipeline.from_pretrained("SimianLuo/LCM_Dreamshaper_v7", custom_pipeline="latent_consistency_txt2img", custom_revision="main", revision="fb9c5d")
 
 # To save GPU memory, torch.float16 can be used, but it may compromise image quality.
-pipe.to(torch_device="cuda", torch_dtype=torch.float32)
+pipe = pipe.to(torch_device="cuda", torch_dtype=torch.float32)
 
 prompt = "Self-portrait oil painting, a beautiful cyborg with golden hair, 8k"
 
